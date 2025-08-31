@@ -1,0 +1,35 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace:cached
+    working_dir: /workspace
+    environment:
+      - DJANGO_ENV=development
+      - DEBUG=TRUE
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/expensetracker
+      - POSTGRES_DB=expensetracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - database
+    ports:
+      - "8000:8000"
+    command: sleep infinity
+  
+  database:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=expensetracker
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
