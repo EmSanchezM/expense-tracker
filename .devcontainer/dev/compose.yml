@@ -1,5 +1,6 @@
 services:
   api:
+    container_name: expensetracker-api
     build:
       context: .
       dockerfile: Dockerfile
@@ -18,8 +19,8 @@ services:
     ports:
       - "8000:8000"
     command: sleep infinity
-  
   database:
+    container_name: expensetracker-database
     image: postgres:latest
     restart: unless-stopped
     environment:

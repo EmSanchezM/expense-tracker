@@ -38,7 +38,7 @@
 			}
 		}
 	},
-	//"postCreateCommand": "pip install -r requirements/dev.txt && python manage.py migrate",
+	"postCreateCommand": "pip install -r requirements/dev.txt",
 	"forwardPorts": [8000, 5432],
 	"portsAttributes": {
 		"8000": {
