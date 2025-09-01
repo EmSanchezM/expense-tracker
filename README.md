@@ -37,3 +37,8 @@ For the different expense categories, you can use the following list (feel free 
 
 Description project: [Roadmad.sh Backend](https://roadmap.sh/projects/expense-tracker-api).
 
+## Getting started
+
+* Start project: `python manage.py runserver 0.0.0.0:8000`
+
+
