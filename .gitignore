@@ -1,2 +1,7 @@
+
+# Virtual environments python 
 /.venv/
 /venv/
+
+# Environments variables
+.env
