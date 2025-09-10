@@ -1,12 +1,12 @@
 services:
   api:
-    container_name: expensetracker-api
+    container_name: api
     build:
       context: .
       dockerfile: Dockerfile
       
     volumes:
-      - ../..:/workspaces:cached
+      - ..:/workspaces:cached
     environment:
       - DJANGO_ENV=development
       - DEBUG=TRUE
@@ -20,7 +20,7 @@ services:
       - "8000:8000"
     command: sleep infinity
   database:
-    container_name: expensetracker-database
+    container_name: database
     image: postgres:latest
     restart: unless-stopped
     environment:
