@@ -41,4 +41,10 @@ Description project: [Roadmad.sh Backend](https://roadmap.sh/projects/expense-tr
 
 * Start project: `python manage.py runserver 0.0.0.0:8000`
 
+## Install dependencies
+* Any dependency: `pip install <name_dependency>`
+* Update requirements: `pip freeze > requirements/dev.txt`
 
+## Create modules
+* Move to apps: `cd apps/`
+* Generate module: `django-admin starapp <name_module>`
